@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form html</title>
+<link rel="stylesheet" type="text/css" href="css/form.css">
+
+ <script>
+         $(document).on("pagecreate","#page1",function(event) {
+            $(window).on("orientationchange",function(e) {
+               if(e.orientation == "portrait") {
+                  $("p").text("portrait orientation!!!");
+                 vibration();
+                  function vibration() {
+                     alert("vibration done");
+                     var time = 3000;
+                     navigator.vibrate(time);
+                     }
+
+            function vibrationPattern() {
+               var pattern = [1000, 1000, 1000, 1000];
+               navigator.vibrate(pattern);
+               }
+                window.location = "form.html";
+               }  else{
+                  $("p").text("landscape orientation!!!");
+                   function vibration() {
+                     alert("vibration done");
+                     var time = 3000;
+                     navigator.vibrate(time);
+                     }
+
+            function vibrationPattern() {
+               var pattern = [1000, 1000, 1000, 1000];
+               navigator.vibrate(pattern);
+               }
+                  window.location = "event.html";
+               }
+            });
+         });
+      </script>
+</head>
+<body>
+<h1>Form For User</h1>
+<form>
+<table>
+<tr>
+  <td><label>Name:</label><br></td>
+  <td><input id = "name" type="text" name="firstname" required=""><br></td>
+  </tr>
+
+
+<tr>
+ <td> <label>Email:</label><br></td>
+ <td> <input id = "email" type="text" name="email" required=""><br></td>
+   </tr>
+  <tr>
+ <td> <label>Contact Address:</label><br></td>
+  <td><textarea id = "address" required=""></textarea><br></td>
+   </tr>
+  <tr>
+  <td><label>Phone Number:</label><br></td>
+  <td><input id = "phno" type="text" name="phno" required=""><br></td>
+   </tr>
+ 
+
+<tr>
+ <td><label >Number of copies:</label><br></td>
+ <td><select id="copy" required="">
+ 	<option>1</option>
+ 	<option>2</option>
+ 	<option>3</option>
+ 	<option>4</option>
+ 	<option>5</option>
+</select><br></td>
+ </tr>
+
+ <tr>
+ <td><label>Photo Size:</label><br></td>
+ <td><select required="">
+ 	<option>8*10</option>
+ 	<option>16*20</option>
+ 	<option>32*40</option>
+</select><br></td>
+ </tr>
+<tr>
+<td><label>Delivery Date:</label><br></td>
+<td><input type="date" name="delivery" required=""><br></td>
+ </tr>
+
+<tr>
+	<td></td>
+	<td><input type="submit" name="Submit" value="Submit" onclick="myFunction()"></td></tr>
+</table>
+
+  </form>
+  <script>
+function myFunction() {
+	var p = document.getElementById("copy");
+	var cops = p.options[p.selectedIndex].value;
+   var r = confirm("You have ordered copies: " + cops + "." + "\n Each copy have 5$"+ "\nYour total amount is:" + cops * 5 + " $." );
+   if(r == true){
+   	alert("Your Order Successfully Done");
+   }
+    return false;  
+
+}
+
+</script>
+</body>
+</html>

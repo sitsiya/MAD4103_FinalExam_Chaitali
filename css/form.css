@@ -1,0 +1,30 @@
+h1{
+	color: #660033;
+}
+label{
+color:  #800040;
+
+}
+input[type = submit]{
+color: #e60073;
+background-color: #80bfff;
+height: 30px;
+width: 100%;
+font-size: 15px;
+font-weight: bold;
+
+}
+input[type = submit]:hover{
+color: #ff99cc;
+background-color: #e60073;	
+}
+input[type = text],textarea,input[type=date],option{
+	width: 100%;
+	height: 30px;
+	padding : 5px;
+	margin-bottom: 15px;
+	margin-top: 3px;
+	border: 2px solid #ddd;
+	font-size: 15px;
+	border-radius: 5px;
+}
